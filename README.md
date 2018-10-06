@@ -61,7 +61,7 @@ import json
 import urllib.request
 
 def main():
-    url = "https://raw.githubusercontent.com/jrdnbradford/The-Office-(U.S.)/master/JSON/episodes.json"
+    url = "https://raw.githubusercontent.com/jrdnbradford/The-Office-US/master/JSON/episodes.json"
     response = urllib.request.urlopen(url)
 
     if response.status == 200:
