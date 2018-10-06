@@ -1,4 +1,4 @@
-# *The*-*Office*-(U.S.)
+# *The*-*Office*-US
 This repo contains JSON structured data concerning NBC's mockumentary series [*The Office* (U.S. version)](https://www.nbc.com/the-office). 
 
 Developers, programmers, and others who are fans of the series can use this data to generate insights about the series.
