@@ -33,8 +33,7 @@ The example below gives an indication of the JSON structure for [episodes.json](
 ## Python Code Examples
 ### Using Locally Downloaded JSON Data
 ```PYTHON
-#Python
-#Print list of everyone who served as a director for The Office.
+#Print set of everyone who served as a director for The Office.
 import json
 
 def main():
@@ -42,20 +41,19 @@ def main():
     officeData = json.load(file)
     file.close()
 
-    directorsList = sorted(set([officeData[season][episode][key] 
-                    for season in officeData 
-                        for episode in officeData[season] 
-                            for key in officeData[season][episode] 
-                                if key == "Director"]))
+    directors = {officeData[season][episode][key] 
+                        for season in officeData 
+                            for episode in officeData[season] 
+                                for key in officeData[season][episode] 
+                                    if key == "Director"}
 
-    print(f"Directors: {directorsList}")
+    print(f"Directors: {directors}")
 
 if __name__ == "__main__": main()
 ```
 
 ### Using urllib.request for JSON Data
 ```python
-#Python
 #Print a dictionary with episode titles as keys and the titles' viewership as values.
 import json
 import urllib.request
