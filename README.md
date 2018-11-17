@@ -37,8 +37,8 @@ The example below gives an indication of the JSON structure for [episodes.json](
 import json
 
 def main():
-    with open("JSON/episodes.json", "r") as file:
-        officeData = json.load(file)
+    with open("JSON/episodes.json", "r") as f:
+        officeData = json.load(f)
 
     directors = {officeData[season][episode]["Director"] 
                         for season in officeData 
