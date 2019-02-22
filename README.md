@@ -3,6 +3,7 @@ This repo contains JSON structured data concerning NBC's mockumentary series [*T
 
 Developers, programmers, and others who are fans of the series can use this data to generate insights.
 
+## Disclaimer
 **This repo is neither authorized by nor affiliated with NBC or *The Office* in any way.**
 
 ## JSON Structure Example
@@ -38,12 +39,12 @@ import json
 
 def main():
     with open("JSON/episodes.json", "r") as f:
-        officeData = json.load(f)
+        office_data = json.load(f)
 
-    directors = {officeData[season][episode]["Director"] 
-                        for season in officeData 
-                            for episode in officeData[season] 
-                                for key in officeData[season][episode]}
+    directors = {office_data[season][episode]["Director"] 
+                        for season in office_data 
+                            for episode in office_data[season] 
+                                for key in office_data[season][episode]}
 
     print(f"Directors: {directors}")
 
@@ -61,21 +62,21 @@ def main():
     response = urllib.request.urlopen(url)
 
     if response.status == 200:
-        officeData = json.load(response)
-        titleList = []
-        viewershipList = []
+        office_data = json.load(response)
+        titles = []
+        viewerships = []
 
-        for season in officeData:    
-            for episode in officeData[season]:
-                data = officeData[season][episode]
+        for season in office_data:    
+            for episode in office_data[season]:
+                data = office_data[season][episode]
                 title = data["Title"]
                 viewership = data["Original US Viewers"]
 
-                titleList.append(title)
-                viewershipList.append(viewership)
+                titles.append(title)
+                viewerships.append(viewership)
 
-        viewershipDict = dict(zip(titleList, viewershipList))
-        print(viewershipDict) 
+        viewership_dict = dict(zip(titles, viewerships))
+        print(viewership_dict) 
 
 if __name__ == "__main__": main()
 ```
