@@ -1,12 +1,14 @@
 # *The*-*Office*-US
-This repo contains JSON structured data concerning NBC's mockumentary series [*The Office* (U.S. version)](https://www.nbc.com/the-office). 
+This repo contains data concerning NBC's mockumentary series [*The Office* (U.S. version)](https://www.nbc.com/the-office). 
 
-Developers, programmers, and others who are fans of the series can use this data to generate insights.
+Developers, programmers, and others who are fans of the series can use this data for educational purposes.
+
+Data is currently available in JSON and CSV format.
 
 ## Disclaimer
 **This repo is neither authorized by nor affiliated with NBC or *The Office* in any way.**
 
-## JSON Structure Example
+## JSON Structure
 The example below gives an indication of the JSON structure for [episodes.json](JSON/episodes.json). 
 
 ```JSON
@@ -31,8 +33,8 @@ The example below gives an indication of the JSON structure for [episodes.json](
 * The *Original US Viewers* key value is a number representing *millions* of viewers.
 * The *Writers* key value is an array of one or more strings.
 
-## Python Code Examples
-### Using Locally Downloaded JSON Data
+## Python Code Examples for JSON
+### Using Locally Downloaded Data
 ```PYTHON
 #Print set of everyone who served as a director for The Office.
 import json
@@ -51,7 +53,7 @@ def main():
 if __name__ == "__main__": main()
 ```
 
-### Using urllib.request for JSON Data
+### Using urllib.request for Data
 ```python
 #Print a dictionary with episode titles as keys and the titles' viewership as values.
 import json
@@ -85,7 +87,6 @@ if __name__ == "__main__": main()
 Pull requests correcting data are welcome.
 
 ## License & Terms of Use
-### [episodes.json](JSON/episodes.json)
 This data was retrieved and adapted from the [__List of *The Office* (U.S. TV series) episodes__ Wikipedia page](https://en.wikipedia.org/wiki/List_of_The_Office_(U.S._TV_series)_episodes) where it was originally formatted in HTML tables. Please see that page for relevant citations.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png"/></a><br/>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. (Plain text version [here](LICENSE.txt).)
