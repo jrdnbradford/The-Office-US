@@ -38,7 +38,7 @@ def json_to_xml():
             new_xml.write(f"<The-Office>\n\n") #Begin XML
             for season in data:
                 season_tag = season.replace(" ", "-")
-                new_xml.write(f"\t<{season_tag}>\n") #Begin Season
+                new_xml.write(f"\t<{season_tag}>\n\n") #Begin Season
                 for episode in data[season]:
                     episode_tag = episode.replace(" ", "-") 
                     new_xml.write(f"\t\t<{episode_tag}>\n") #Begin Episode
