@@ -3,7 +3,7 @@ This repo contains data concerning NBC's mockumentary series [*The Office* (U.S.
 
 Developers, programmers, and others who are fans of the series can use this data for educational purposes.
 
-Data is currently available in JSON and CSV format.
+Data was originally structured as JSON but has been converted to both CSV and XML formats using the code in [convert.py](convert.py).
 
 ## Disclaimer
 **This repo is neither authorized by nor affiliated with NBC or *The Office* in any way.**
