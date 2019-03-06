@@ -8,9 +8,20 @@ Data was originally structured as JSON but has been converted to both CSV and XM
 ## Disclaimer
 **This repo is neither authorized by nor affiliated with NBC or *The Office* in any way.**
 
-## JSON Structure
-The example below gives an indication of the JSON structure for [episodes.json](JSON/episodes.json). 
+## Data Structure
+Subheadings below give an indication of how the data is structured in different formats.
+In some cases, compacted/minified versions are available.
 
+*Original US Viewers* is a number representing *millions* of viewers.
+
+### [CSV](CSV/episodes.csv)
+| Season | Episode | Title | Director | Writer(s) | Air Date | Original US Viewers | Production Code | Two-Part Episode |
+| -------| ------- | ------| -------- | --------- | -------- | ------------------- | --------------- | ---------------- |
+| Season 1 | Episode 1 | Pilot | Ken Kwapis | Greg Daniels,Ricky Gervais,Stephen Merchant | March 24, 2005 | 11.2 | 1001 | False |
+| Season 1 | Episode 2 | Diversity Day | Ken Kwapis | B.J. Novak | March 29, 2005 | 6.0 | 1002 | False |
+| Season 1 | Episode 3 | Health Care | Ken Whittingham | Paul Lieberstein | April 5, 2005 | 5.8 | 1006 | False |
+
+### [JSON](JSON/episodes.json)
 ```JSON
 {
     "Season 1" : { 
@@ -30,61 +41,35 @@ The example below gives an indication of the JSON structure for [episodes.json](
     }
 }
 ```
-* The *Original US Viewers* key value is a number representing *millions* of viewers.
-* The *Writers* key value is an array of one or more strings.
 
-## Python Code Examples for JSON
-### Using Locally Downloaded Data
-```PYTHON
-#Print set of everyone who served as a director for The Office.
-import json
-
-def main():
-    with open("JSON/episodes.json", "r") as f:
-        office_data = json.load(f)
-
-    directors = {office_data[season][episode]["Director"] 
-                        for season in office_data 
-                            for episode in office_data[season] 
-                                for key in office_data[season][episode]}
-
-    print(f"Directors: {directors}")
-
-if __name__ == "__main__": main()
-```
-
-### Using urllib.request for Data
-```python
-#Print a dictionary with episode titles as keys and the titles' viewership as values.
-import json
-import urllib.request
-
-def main():
-    url = "https://raw.githubusercontent.com/jrdnbradford/The-Office-US/master/JSON/episodes.json"
-    response = urllib.request.urlopen(url)
-
-    if response.status == 200:
-        office_data = json.load(response)
-        titles = []
-        viewerships = []
-
-        for season in office_data:    
-            for episode in office_data[season]:
-                data = office_data[season][episode]
-                title = data["Title"]
-                viewership = data["Original US Viewers"]
-
-                titles.append(title)
-                viewerships.append(viewership)
-
-        viewership_dict = dict(zip(titles, viewerships))
-        print(viewership_dict) 
-
-if __name__ == "__main__": main()
+### [XML](XML/episodes.xml)
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<The-Office>
+    <Season-1>
+        <Episode-1>
+            <Title>Pilot</Title>
+            <Director>Ken Kwapis</Director>
+            <Writers>
+                <Writer-1>Greg Daniels</Writer-1>
+                <Writer-2>Ricky Gervais</Writer-2>
+                <Writer-3>Stephen Merchant</Writer-3>
+            </Writers>
+            <Air-Date>
+                <Year>2005</Year>
+                <Month>3</Month>
+                <Day>24</Day>
+            </Air-Date>
+            <Original-US-Viewers>11.2</Original-US-Viewers>
+            <Production-Code>1001</Production-Code>
+            <Two-Part-Episode>False</Two-Part-Episode>
+        </Episode-1>
+    </Season-1>
+</The-Office>
 ```
 
 ## Contributing
-Pull requests correcting data are welcome.
+If you find incorrect data or have any suggestions, open an issue. No pull requests.
 
 ## License & Terms of Use
 This data was retrieved and adapted from the [__List of *The Office* (U.S. TV series) episodes__ Wikipedia page](https://en.wikipedia.org/wiki/List_of_The_Office_(U.S._TV_series)_episodes) where it was originally formatted in HTML tables. Please see that page for relevant citations.
