@@ -3,7 +3,7 @@ This repo contains data concerning NBC's mockumentary series [*The Office* (U.S.
 
 Developers, programmers, and others who are fans of the series can use this data for educational purposes.
 
-Data was originally structured as JSON but has been converted to both CSV and XML formats using the code in [convert.py](convert.py).
+Data was originally structured as JSON but has been converted to both CSV and XML formats.
 
 ## Disclaimer
 **This repo is neither authorized by nor affiliated with NBC or *The Office* in any way.**
@@ -17,9 +17,9 @@ In some cases, compacted/minified versions are available.
 ### [CSV](CSV/episodes.csv)
 | Season | Episode | Title | Director | Writer(s) | Air Date | Original US Viewers | Production Code | Two-Part Episode |
 | -------| ------- | ------| -------- | --------- | -------- | ------------------- | --------------- | ---------------- |
-| Season 1 | Episode 1 | Pilot | Ken Kwapis | Greg Daniels,Ricky Gervais,Stephen Merchant | March 24, 2005 | 11.2 | 1001 | False |
-| Season 1 | Episode 2 | Diversity Day | Ken Kwapis | B.J. Novak | March 29, 2005 | 6.0 | 1002 | False |
-| Season 1 | Episode 3 | Health Care | Ken Whittingham | Paul Lieberstein | April 5, 2005 | 5.8 | 1006 | False |
+| 1 | 1 | Pilot | Ken Kwapis | Greg Daniels,Ricky Gervais,Stephen Merchant | March 24, 2005 | 11.2 | 1001 | False |
+| 1 | 2 | Diversity Day | Ken Kwapis | B.J. Novak | March 29, 2005 | 6.0 | 1002 | False |
+| 1 | 3 | Health Care | Ken Whittingham | Paul Lieberstein | April 5, 2005 | 5.8 | 1006 | False |
 
 ### [JSON](JSON/episodes.json)
 ```JSON
